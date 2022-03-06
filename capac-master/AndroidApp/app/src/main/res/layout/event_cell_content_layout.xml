@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/corner_border_gray"
+    android:padding="20dp"
+    android:elevation="2dp"
+    android:visibility="gone">
+    <RelativeLayout
+        android:id="@+id/date_time_loc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginStart="80dp"
+            android:layout_alignParentStart="true"
+            android:id="@+id/time_in_content_cell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_access_time_black_24dp"
+            android:text="@string/mock_time"
+            style="@style/Base.TextAppearance.AppCompat.Caption"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="80dp"
+            android:layout_centerHorizontal="true"
+            style="@style/Base.TextAppearance.AppCompat.Caption"
+            android:id="@+id/date_in_content_cell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_event_black_24dp"
+            android:text="@string/mock_date"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_below="@id/date_in_content_cell"
+            android:layout_centerHorizontal="true"
+            style="@style/Base.TextAppearance.AppCompat.Caption"
+            android:id="@+id/location_in_content_cell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_location_on_black_24dp"
+            android:text="Parcul cel mare al celui mai mare"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <View
+        android:layout_margin="10dp"
+        android:background="@color/dark_gray"
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/date_time_loc" />
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/separator"
+        android:id="@+id/sport_keyword1"
+        style="@style/Base.TextAppearance.AppCompat.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sport_keyword"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/sport_type_in_content_cell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sport_keyword1"
+        android:text="@string/mock_sport_time"
+        android:textSize="30sp"
+        android:textAppearance="@style/TextAppearance.Text.Bold"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_below="@id/sport_type_in_content_cell"
+        android:id="@+id/organizer_keyword"
+        style="@style/Base.TextAppearance.AppCompat.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/organizer_keyword"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/organizer_in_title_cell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/organizer_keyword"
+        android:text="@string/mock_organizer"
+        android:textAppearance="@style/TextAppearance.Text.Bold"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_below="@id/sport_type_in_content_cell"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/going_keyword"
+        style="@style/Base.TextAppearance.AppCompat.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_of_user_keyword"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_alignParentEnd="true"
+        android:id="@+id/number_of_users_going_in_title_cell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/going_keyword"
+        android:textAppearance="@style/TextAppearance.Text.Bold"
+        android:text="@string/mock_number_of_users"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/organizer_in_title_cell"
+        android:id="@+id/description_key_word"
+        style="@style/Base.TextAppearance.AppCompat.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/description_keyword"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_marginBottom="10dp"
+        android:id="@+id/event_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Text.Bold"
+        android:layout_below="@id/description_key_word"
+        android:textAlignment="center"
+        android:text="@string/default_description"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:padding="2dp"
+        android:layout_below="@id/event_description"
+        android:id="@+id/players_count_key_word"
+        style="@style/Base.TextAppearance.AppCompat.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/req_players_keyword"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+    <TextView
+        android:padding="2dp"
+        android:id="@+id/required_player_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/event_description"
+        android:layout_toEndOf="@id/players_count_key_word"
+        android:gravity="center"
+        android:text="@string/mock_req_users"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:padding="2dp"
+        android:layout_toStartOf="@id/event_req_stars"
+        android:layout_below="@id/event_description"
+        android:id="@+id/min_rep_key_word"
+        style="@style/Base.TextAppearance.AppCompat.Caption"
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="@string/req_stars_keyword"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+    <TextView
+        android:padding="2dp"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/event_req_stars"
+        android:id="@+id/event_req_stars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/event_description"
+        android:text="@string/mock_req_stars"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/attend_event"
+        android:layout_below="@id/required_player_number"
+        android:layout_marginTop="10dp"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:textColor="#ffffff"
+        android:text="Go"
+        android:textAppearance="@style/TextAppearance.Text.Bold"
+        android:textAllCaps="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/my_round_button"/>
+</RelativeLayout>

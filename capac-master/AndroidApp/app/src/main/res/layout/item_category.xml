@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/category"
+    android:layout_width="match_parent"
+    android:layout_height="180dp">
+    <ro.capac.android.capac2018.ui.custom.MyImageView
+        android:background="@android:color/transparent"
+        android:id="@+id/category_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/category_title"
+        style="@style/TextAppearance.Text.Regular"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="#fffff5"
+        android:fontFamily="proxima-nova"
+        android:textAllCaps="true"
+        android:textSize="40sp" />
+</RelativeLayout>

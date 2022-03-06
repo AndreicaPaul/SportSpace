@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="items">
+        <item>Basketball</item>
+        <item>Bowling</item>
+        <item>Canoeing</item>
+        <item>Chess &amp; Board Games</item>
+        <item>Cycling</item>
+        <item>Football</item>
+        <item>Golf</item>
+        <item>Gym</item>
+        <item>Handball</item>
+        <item>Hiking</item>
+        <item>Ice Skating</item>
+        <item>Pool</item>
+        <item>Running</item>
+        <item>Skiing</item>
+        <item>Snowboarding</item>
+        <item>Swimming</item>
+        <item>Table Tennis</item>
+        <item>Tennis</item>
+        <item>Volleyball</item>
+    </string-array>
+</resources>

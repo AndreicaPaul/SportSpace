@@ -1,0 +1,88 @@
+buildscript {
+    repositories {
+        //mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.3.RELEASE")
+    }
+}
+
+plugins {
+    id "org.flywaydb.flyway" version "5.1.4"
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    baseName = 'gs-rest-service'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web"){
+        exclude module: 'spring-boot-starter-logging'
+    }
+    //compile ('org.springframework.boot:spring-boot-starter-log4j2')
+    compile("org.springframework.boot:spring-boot-starter-data-rest")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile('org.postgresql:postgresql:42.2.4')
+
+    //for local development
+    compile("com.h2database:h2")
+
+    //for color codes in windows console logger
+    compile('org.fusesource.jansi:jansi:1.17.1')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('com.jayway.jsonpath:json-path')
+    
+    
+}
+
+// For Heroku
+/*task copyToLib(type: Copy) {
+    into "$buildDir/server"
+    from(configurations.providedCompile) {
+        include "webapp-runner*"
+    }
+}*/
+
+task stage() {
+    dependsOn clean, bootWar
+}
+bootWar.mustRunAfter clean
+
+
+
+task migrateDBLocal(type: org.flywaydb.gradle.task.FlywayMigrateTask) {
+    url = 'jdbc:h2:file:~/capac/capac-h2-db'
+    user = 'sa'
+    password = ''
+    sqlMigrationPrefix = 'update_'
+    validateOnMigrate = false
+    locations = ['filesystem:src/main/db/migration']
+    baselineOnMigrate = true
+}
+
+task migrateDBHeroku(type: org.flywaydb.gradle.task.FlywayMigrateTask) {
+    url = 'jdbc:postgresql://ec2-54-225-76-201.compute-1.amazonaws.com/dfk1sq6l7h9n4b?sslmode=require'
+    user = 'eocxttmpfyzyin'
+    password = 'b00198070168ecf5886a7ac0d49462b0ae6b3a2bfafb4dc79f48829e79f3b2d6'
+    sqlMigrationPrefix = 'update_'
+    validateOnMigrate = false
+    locations = ['filesystem:src/main/db/migration']
+    baselineOnMigrate = true
+}
+
